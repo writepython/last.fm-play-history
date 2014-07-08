@@ -10,7 +10,7 @@ var MainView = new KONtx.Class({
 			guid: "button1",
 			events: {
 				onSelect: function(event) {
-					KONtx.application.loadView('view-Sub1', { foo: 33 });
+					KONtx.application.loadView('view-Sub1', { foo: 99 });
 				}
 			},
 			styles: {

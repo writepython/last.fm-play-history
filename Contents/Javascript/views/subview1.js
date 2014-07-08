@@ -20,8 +20,13 @@ var Sub1View = new KONtx.Class({
 	},
 	
 	updateView: function() {
-		this.parent();
-		this.controls.label.setText("Foo = " + this.persist.foo);
+	    this.parent();
+	    var xmlHttp = null;
+	    var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=writepython&api_key=d44fcea4e2a564b4986245ed24796ca3&format=json"
+	    xmlHttp = new XMLHttpRequest();
+	    xmlHttp.open( "GET", url, false );
+	    xmlHttp.send( null );
+	    this.controls.label.setText("Foo = " + xmlHttp.responseText);
 	},
 	
 	_getSnippetId: function() {
