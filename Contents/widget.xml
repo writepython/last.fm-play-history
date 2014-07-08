@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <name>BookmarkSample</name>
-    <version>1.6.2</version>
-    <identifier>com.yahoo.widgets.tv.bookmarksample</identifier>
-    <author name="" organization="Yahoo!" href="http://connectedtv.yahoo.com" />
-    <copyright>2009-2012 Yahoo!</copyright>
-    <description>Bookmark sample widget</description>
+    <name>Ryan 4</name>
+    <version>0.1</version>
+    <identifier>com.ryan.apps.lastapp</identifier>
+    <author name="Ryan" organization="Ryan Inc" href="http://last.fm" />
+    <copyright>2014 Ryan</copyright>
+    <description>Ryan 5</description>
     <platform minVersion="4.6.1" />
     <security>
 		<filesystem>full</filesystem>
 		<command>true</command>
         <http>all</http>
     </security>
-    <image usage="1920x1080.logo" src="Images/1920x1080/logo.png"/>
-    <image usage="960x540.logo" src="Images/960x540/logo.png"/>
 </metadata>

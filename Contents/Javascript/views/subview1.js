@@ -11,7 +11,7 @@ var Sub1View = new KONtx.Class({
 		}).appendTo(this);
 		this.controls.label = new KONtx.element.Text({
 			styles: {
-				fontSize: KONtx.utility.scale(24),
+				fontSize: KONtx.utility.scale(10),
 				vAlign: "center",
 				hAlign: "center",
 				color: "#FFFFFF"
@@ -19,14 +19,20 @@ var Sub1View = new KONtx.Class({
 		}).appendTo(this);
 	},
 	
+	fetchData: function() {
+		var u = new URL();
+		u.location = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=writepython&api_key=d44fcea4e2a564b4986245ed24796ca3&format=json";
+		u.fetchAsync(this.handleFetchResponse.bindTo(this));
+	},
+
+	handleFetchResponse: function(u) {
+		// do whatever you need to do to format the data and store in "result"
+		var json = JSON.parse(u.result);
+		this.controls.label.setText("Roo = " + json.recenttracks.@attr.user);
+	},
+
 	updateView: function() {
-	    this.parent();
-	    var xmlHttp = null;
-	    var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=writepython&api_key=d44fcea4e2a564b4986245ed24796ca3&format=json"
-	    xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open( "GET", url, false );
-	    xmlHttp.send( null );
-	    this.controls.label.setText("Foo = " + xmlHttp.responseText);
+		this.fetchData();
 	},
 	
 	_getSnippetId: function() {

@@ -9,7 +9,8 @@ var StaticSnippetView = new KONtx.Class({
 		
 	createView: function() {
 		this.controls.text = new KONtx.element.Text({
-			label: "Bookmark Sample",
+			// What is shown in the dock
+			label: "Last.fm User Play History",
 			styles: {
 				fontSize: KONtx.utility.scale(20),
 				vAlign: "center",

@@ -29,7 +29,7 @@ var DynamicSnippetView = new KONtx.Class({
 		// you could of course do a lot more customization inside the view than this
 		// but this is just a basic example
 		this.controls.label = new KONtx.element.Text({
-			label: "Bookmark Sample",
+			label: "Last.fm Play History",
 			styles: {
 				fontSize: KONtx.utility.scale(20),
 				vOffset: KONtx.utility.scale(20),
