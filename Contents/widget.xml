@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <name>Ryan 4</name>
+    <name>Last.fm Play History</name>
     <version>0.1</version>
     <identifier>com.ryan.apps.lastapp</identifier>
-    <author name="Ryan" organization="Ryan Inc" href="http://last.fm" />
+    <author name="Ryan" organization="Ryan Inc." href="http://last.fm/user/writepython" />
     <copyright>2014 Ryan</copyright>
-    <description>Ryan 5</description>
+    <description>Last.fm Play History</description>
     <platform minVersion="4.6.1" />
     <security>
 		<filesystem>full</filesystem>

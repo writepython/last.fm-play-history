@@ -6,7 +6,7 @@ var MainView = new KONtx.Class({
 
 	createView: function() {
 		this.controls.button1 = new KONtx.control.TextButton({
-			label: "Load Subview #1 w/ foo = 33",
+			label: "Show Play History",
 			guid: "button1",
 			events: {
 				onSelect: function(event) {
@@ -19,7 +19,7 @@ var MainView = new KONtx.Class({
 				vOffset: 0,
 			}
 		}).appendTo(this);
-		
+/*		
 		this.controls.button2 = new KONtx.control.TextButton({
 			label: "Load Subview #1 w/ foo = 42",
 			guid: "button2",
@@ -49,7 +49,7 @@ var MainView = new KONtx.Class({
 				vOffset: KONtx.utility.scale(70),
 			}
 		}).appendTo(this);
-		
+*/		
 		new KONtx.control.EmptySpace({
 			styles: {
 				vOffset: KONtx.utility.scale(105),

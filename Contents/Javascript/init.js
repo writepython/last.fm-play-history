@@ -14,7 +14,7 @@ KONtx.application.init({
 	views: [
 		{ id: 'view-Main', viewClass: MainView },
 		{ id: 'view-Sub1', viewClass: Sub1View },
-		{ id: 'view-Sub2', viewClass: Sub2View },
+//		{ id: 'view-Sub2', viewClass: Sub2View },
 		{ id: 'view-Settings', viewClass: KONtx.views.AboutBox },
 		{ id: 'snippet-main', viewClass: StaticSnippetView },
 	],

@@ -7,13 +7,17 @@ var Sub1View = new KONtx.Class({
 
 	createView: function() {
 		this.controls.backbutton = new KONtx.control.BackButton({
-			label: "Subview #1",
+			label: "Play History",
 		}).appendTo(this);
+
 		this.controls.label = new KONtx.element.Text({
+			wrap: true,
 			styles: {
-				fontSize: KONtx.utility.scale(10),
-				vAlign: "center",
-				hAlign: "center",
+				fontSize: KONtx.utility.scale(16),
+				width: this.width,
+				vAlign: "top",
+				hAlign: "left",
+				vOffset: 33,
 				color: "#FFFFFF"
 			},
 		}).appendTo(this);
@@ -21,14 +25,21 @@ var Sub1View = new KONtx.Class({
 	
 	fetchData: function() {
 		var u = new URL();
-		u.location = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=writepython&api_key=d44fcea4e2a564b4986245ed24796ca3&format=json";
+		u.location = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=writepython&api_key=d44fcea4e2a564b4986245ed24796ca3&format=json&limit=15";
 		u.fetchAsync(this.handleFetchResponse.bindTo(this));
 	},
 
 	handleFetchResponse: function(u) {
 		// do whatever you need to do to format the data and store in "result"
 		var json = JSON.parse(u.result);
-		this.controls.label.setText("Roo = " + json.recenttracks.@attr.user);
+		var recent_tracks = json.recenttracks.track
+		var text = ""
+//for each(var entry in playlist.entries)
+		for (i = 0; i < recent_tracks.length; i++) {
+			text += i+1 + ". " + recent_tracks[i].artist["#text"] + " - " + recent_tracks[i].name + "\n";
+		}
+
+		this.controls.label.setText(text);
 	},
 
 	updateView: function() {
@@ -46,7 +57,7 @@ var Sub1View = new KONtx.Class({
 	},
 	
 	addSnippet: function() {
-		$preferences.addSnippet(this._getSnippetId(), { destinationId: this.config.viewId, label: "View #1 w/ Foo = " + this.persist.foo, customData: { foo: this.persist.foo } });
+		$preferences.addSnippet(this._getSnippetId(), { destinationId: this.config.viewId, label: "Play History" });
 	},
 	
 	removeSnippet: function() {
